@@ -42,3 +42,22 @@ set encoding=utf-8
 set fileencoding=utf-8
 set fileencodings=utf-8
 set bomb
+set binary
+
+"" Fix backspace indent
+set backspace=indent,eol,start
+
+"" Tabs. May be overriten by autocmd rules
+set tabstop=2
+set softtabstop=0
+set shiftwidth=2
+set expandtab
+
+"*****************************************************************************
+"" NERDTree Setup
+"*****************************************************************************
+
+"" How can i prevent other buffers replacing NERDTree in its window?
+"" If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
+autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
+    \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
