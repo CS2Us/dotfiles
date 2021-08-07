@@ -4,8 +4,8 @@
 call plug#begin('~/.vim/plugged')
 
 " theme
-" Plug 'dracula/vim', { 'as': 'dracula' }
-" Plug 'joshdick/onedark.vim'
+Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'joshdick/onedark.vim'
 
 " Functionalities
 " Plug 'preservim/nerdtree'
@@ -17,17 +17,17 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'jiangmiao/auto-pairs'
+" Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/vim-easy-align'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'tpope/vim-surround'
+" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+" Plug 'junegunn/fzf.vim'
+" Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-sensible'
 Plug 'majutsushi/tagbar'
 Plug 'ycm-core/youcompleteme'
-Plug 'wincent/command-t'
+" Plug 'wincent/command-t'
 Plug 'wincent/ferret'
 Plug 'breuckelen/vim-resize'
 
@@ -48,6 +48,15 @@ nmap <Leader>t :tabs<CR>:tab
 
 """ 映射Esc key
 inoremap jj <Esc>
+
+""" 映射fzf :Files
+nmap <Leader>o :Files<CR>
+
+""" 映射ferret
+nmap <Leader>f :Ack<Space>
+
+""" 映射YouCompleteMe
+nmap <leader>jd :YcmCompleter GoTo<CR>
 
 " Set to auto read when a file is changed from the outside
 set autoread
@@ -73,10 +82,6 @@ map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
-
-" Hit <enter> to insert new line in normal mode
-map <Enter> o<ESC>
-map <S-Enter> O<ESC>
 
 " Paste from system clipboard
 nnoremap <leader>p "+p
