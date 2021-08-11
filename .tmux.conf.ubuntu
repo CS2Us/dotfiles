@@ -1,0 +1,4 @@
+# tmux默认快捷键的前缀是 ctrl-b, 我修改成了 ` (数字键1左边的那个键)
+# Set Ctrl-b key bindings
+unbind C-b
+set -g prefix `
